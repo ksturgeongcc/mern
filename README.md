@@ -6,5 +6,6 @@
 # npm install mongodb express mongoose cors dotenv in the server folder, this will add the node_modules to this folder too plus all the dependencies for the server to connect to mongoDB cloud
 
 # also install nodemon which will restart the server once changes have been made
-# npm install nodemon
+# npm install nodemon 
+
 
