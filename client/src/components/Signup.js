@@ -92,7 +92,6 @@ function Signup() {
         body: JSON.stringify({
           email: values.email,
           password: values.password,
-          is_admin: values.is_admin,
         }),
       })
 
@@ -118,6 +117,7 @@ function Signup() {
       setValues({
         email: '',
         password: '',
+        is_admin: '',
         repeatPassword: '',
         showPassword: false,
         showRepeatPassword: false,
