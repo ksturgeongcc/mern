@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+
 import validator from 'validator'
 import { regexPassword } from '../utils'
 import {
@@ -29,6 +31,7 @@ import theme from '../styles/theme'
 console.log('signup function login');
 
 function Signup() {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -46,6 +49,7 @@ function Signup() {
 
   const handleChange = (fieldName) => (event) => {
     const currValue = event.target.value
+    // eslint-disable-next-line default-case
     switch (fieldName) {
       case 'email':
         validator.isEmail(currValue)
@@ -88,6 +92,7 @@ function Signup() {
         body: JSON.stringify({
           email: values.email,
           password: values.password,
+          is_admin: values.is_admin,
         }),
       })
 
@@ -99,7 +104,8 @@ function Signup() {
           fetchErrorMsg: error.msg,
         })
       }
-
+      // redirecting user to login on successful registration
+      navigate('/');
       const data = await res.json()
       // this is just a visual feedback for user for this demo
       // this will not be an error, rather we will show a different UI or redirect user to dashboard
@@ -118,6 +124,7 @@ function Signup() {
       })
     } catch (error) {
       return
+      // eslint-disable-next-line no-unreachable
       setErrors({
         ...errors,
         fetchError: true,

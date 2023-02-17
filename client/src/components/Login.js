@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import validator from 'validator'
 import { regexPassword } from '../utils'
 
@@ -30,10 +31,13 @@ import {
 import theme from '../styles/theme'
 console.log('function login');
 function Login({}) {
+  const navigate = useNavigate();
+
   const [values, setValues] = useState({
     email: '',
     password: '',
     showPassword: false,
+    is_admin: false,
   })
   const [errors, setErrors] = useState({
     email: false,
@@ -76,6 +80,7 @@ function Login({}) {
         body: JSON.stringify({
           email: values.email,
           password: values.password,
+          is_admin: values.false,
         }),
       })
 
@@ -87,6 +92,7 @@ function Login({}) {
           fetchErrorMsg: error.msg,
         })
       }
+      navigate('/dashboard');
 
       const data = await res.json()
       console.log({ data })
@@ -101,6 +107,7 @@ function Login({}) {
       setValues({
         email: '',
         password: '',
+        is_admin: false,
         showPassword: false,
       })
       return
@@ -152,6 +159,10 @@ function Login({}) {
               onChange={handleChange('email')}
               error={errors.email}
               helperText={errors.email && 'Please insert a valid email address'}
+            />
+            <TextField
+              type='hidden'
+              value={values.is_admin}
             />
 
             <FormControl variant='filled'>

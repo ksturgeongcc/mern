@@ -13,6 +13,11 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  // unsure if this is correct
+  is_admin: {
+    type: Boolean,
+    default: Boolean.false,
+  },
 })
 
 const User = mongoose.model('User', UserSchema)
