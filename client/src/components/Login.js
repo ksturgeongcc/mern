@@ -92,6 +92,7 @@ function Login({}) {
           fetchErrorMsg: error.msg,
         })
       }
+      // using the navigate function to redirect the user to the dashboard
       navigate('/dashboard');
 
       const data = await res.json()
@@ -160,10 +161,7 @@ function Login({}) {
               error={errors.email}
               helperText={errors.email && 'Please insert a valid email address'}
             />
-            <TextField
-              type='hidden'
-              value={values.is_admin}
-            />
+        
 
             <FormControl variant='filled'>
               <InputLabel htmlFor='password-field'>Password</InputLabel>
