@@ -16,6 +16,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import './Dashboard.css';
 
 function Copyright() {
     return (
@@ -30,7 +33,7 @@ function Copyright() {
     );
   }
   
-  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+ 
   
   const theme = createTheme();
 // this will display the users options the content will be dynamic depending on the user role
@@ -81,35 +84,9 @@ export default function Dashboard() {
               </Stack>
             </Container>
           </Box>
-          <Container sx={{ py: 8 }} maxWidth="md">
-            {/* End hero unit */}
-            <Grid container spacing={4}>
-              {cards.map((card) => (
-                <Grid item key={card} xs={12} sm={6} md={4}>
-                <Link component={RouterLink} to='/signup'>
-                  <Card
-                    sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                  >
-                    <CardMedia
-                      component="img"
-                      sx={{
-                        // 16:9
-                        pt: '56.25%',
-                      }}
-                      image="https://source.unsplash.com/random"
-                      alt="random"
-                    />
-                    <CardContent sx={{ flexGrow: 1 }}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        Department Details
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                  </Link>
-                </Grid>
-              ))}
-            </Grid>
-          </Container>
+          
+          
+ 
         </main>
         {/* Footer */}
         <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
