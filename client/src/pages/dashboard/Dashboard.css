@@ -1,0 +1,45 @@
+.css-d1ev6n-MuiStack-root button{
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+}
+.css-d1ev6n-MuiStack-root{
+    flex-wrap: wrap;
+}
+.css-d1ev6n-MuiStack-root button a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255, 0.3);
+    color: black;
+    text-decoration: none;
+    padding: 0 !important;
+}
+
+.css-d1ev6n-MuiStack-root button:nth-child(1){
+    background-image: url(../../img/appt.png);
+}
+.css-d1ev6n-MuiStack-root button:nth-child(2){
+    background-image: url(../../img/dept.jpg);
+}
+.css-d1ev6n-MuiStack-root button:nth-child(3){
+    background-image: url(../../img/dept.jpg);
+}
+.css-d1ev6n-MuiStack-root button:nth-child(4){
+    background-image: url(../../img/fz.jpg);
+}
+.blue{
+    background: black;
+}
+@media (min-width: 600px){
+    .css-cuefkz-MuiContainer-root {
+        max-width: unset !important;
+        padding-left: unset !important;
+        padding-right: unset !important;
+    }
+}

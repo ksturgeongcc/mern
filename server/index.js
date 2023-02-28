@@ -47,6 +47,7 @@ app.use(
 
 app.use(cors(corsOptions))
 app.use(express.json())
+app.use(express.urlencoded({ extended: false}));
 
 // ROUTERS
 app.use('/api', loginRouter)

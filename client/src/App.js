@@ -3,7 +3,6 @@ import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from './styles/theme'
 import Routes from './Routes'
-
 export const UserContext = createContext({})
 
 function App() {
@@ -40,3 +39,12 @@ function App() {
 }
 
 export default App
+
+// App.get('/getUserDetails', async(req, res)=>{
+//   try{
+//       const allUser = await User.find({});
+//       res.send({ status: 'ok', data: users });
+//   } catch (error){
+//     console.log(error);
+//   }
+// })

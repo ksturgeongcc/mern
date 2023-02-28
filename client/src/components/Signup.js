@@ -117,7 +117,7 @@ function Signup() {
       setValues({
         email: '',
         password: '',
-        is_admin: '',
+        is_admin: '0',
         repeatPassword: '',
         showPassword: false,
         showRepeatPassword: false,
@@ -173,6 +173,7 @@ function Signup() {
               error={errors.email}
               helperText={errors.email && 'Please insert a valid email address'}
             />
+            
 
             <FormControl variant='filled'>
               <InputLabel htmlFor='password-field'>Password</InputLabel>

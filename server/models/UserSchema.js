@@ -15,11 +15,27 @@ const UserSchema = new mongoose.Schema({
   },
   // unsure if this is correct
   is_admin: {
-    type: Boolean,
-    default: Boolean.false,
+    type: Number,
+    default: 0,
   },
+  guardian_name: {
+    type: String,
+    default: 'Not Set',
+  },
+  address: {
+    type: String,
+    default: 'Not Set',
+  },
+  // dob: {
+  //   type: date,
+  // },
+  // department: {
+  //   type: String,
+  //   default: 'Not Set',
+  // },
 })
 
 const User = mongoose.model('User', UserSchema)
 
 module.exports = User
+
