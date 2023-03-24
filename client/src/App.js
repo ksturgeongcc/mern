@@ -40,11 +40,4 @@ function App() {
 
 export default App
 
-// App.get('/getUserDetails', async(req, res)=>{
-//   try{
-//       const allUser = await User.find({});
-//       res.send({ status: 'ok', data: users });
-//   } catch (error){
-//     console.log(error);
-//   }
-// })
+

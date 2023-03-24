@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import { Link as RouterLink } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar';
@@ -5,51 +6,32 @@ import Button from '@mui/material/Button';
 import MedicalInformation from '@mui/icons-material/PhotoCamera';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import appt from '../img/appt.png';
 import './Dashboard.css';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import StarIcon from '@mui/icons-material/StarBorder';
 import CardHeader from '@mui/material/CardHeader';
 import Card from '@mui/material/Card';
-
-
-
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Clyde Childrens Hospital
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Footer from '../../components/Footer';
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
+    title: 'My Appointment',
     description: [
-      '10 users included',
-      '2 GB of storage',
-      'Help center access',
-      'Email support',
+      'Meet your doctors',
+      'What will happen at my appointment',
+      'FAQs',
     ],
     buttonText: 'Sign up for free',
     buttonVariant: 'outlined',
   },
   {
-    title: 'Pro',
+    title: 'x-ray department',
     subheader: 'Most popular',
     price: '15',
     description: [
@@ -62,7 +44,7 @@ const tiers = [
     buttonVariant: 'contained',
   },
   {
-    title: 'Enterprise',
+    title: 'Game Zone',
     price: '30',
     description: [
       '50 users included',
@@ -88,7 +70,6 @@ export default function Dashboard() {
           <Typography variant="h6" color="inherit" noWrap>
             Clyde Hospital Portal
           </Typography>
-          
         </Toolbar>
       </AppBar>
       <main>
@@ -116,126 +97,81 @@ export default function Dashboard() {
             </Typography>
             {/* boxes */}
             <Container maxWidth="md" component="main">
-        <Grid container spacing={5} alignItems="flex-end">
-          {tiers.map((tier) => (
-            // Enterprise card is full width at sm breakpoint
-            <Grid
-              item
-              key={tier.title}
-              xs={12}
-              sm={tier.title === 'Enterprise' ? 12 : 6}
-              md={4}
-            >
-              <Card>
-                <CardHeader blue
-                  title={tier.title}
-                  subheader={tier.subheader}
-                  titleTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
-                  subheaderTypographyProps={{
-                    align: 'center',
-                  }}
-                  sx={{
-                    backgroundColor: (theme) =>
-                      theme.palette.mode === 'light'
-                        ? theme.palette.grey[200]
-                        : theme.palette.grey[700],
-                  }}
-                />
-                <CardContent>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'baseline',
-                      mb: 2,
-                    }}
+              <Grid container spacing={5} alignItems="flex-end">
+                {tiers.map((tier) => (
+                  // Enterprise card is full width at sm breakpoint
+                  <Grid
+                    item
+                    key={tier.title}
+                    xs={12}
+                    sm={tier.title === 'Enterprise' ? 12 : 6}
+                    md={4}
                   >
-                    <Typography component="h2" variant="h3" color="text.primary">
-                      ${tier.price}
-                    </Typography>
-                    <Typography variant="h6" color="text.secondary">
-                      /mo
-                    </Typography>
-                  </Box>
-                  <ul>
-                    {tier.description.map((line) => (
-                      <Typography
-                        component="li"
-                        variant="subtitle1"
-                        align="center"
-                        key={line}
-                      >
-                        {line}
-                      </Typography>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardActions>
-                  <Button
-                    fullWidth
-                    variant="oulined"
-                  >
-                    {tier.buttonText}
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
+                    <Card>
+                      <CardHeader blue
+                        title={tier.title}
+                        subheader={tier.subheader}
+                        titleTypographyProps={{ align: 'center' }}
+                        action={tier.title === 'Pro' ? <StarIcon /> : null}
+                        subheaderTypographyProps={{
+                          align: 'center',
+                        }}
+                        sx={{
+                          backgroundColor: (theme) =>
+                            theme.palette.mode === 'light'
+                              ? theme.palette.grey[200]
+                              : theme.palette.grey[700],
+                        }}
+                      />
+                      <CardContent>
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'baseline',
+                            mb: 2,
+                          }}
+                        >
 
-              <Button variant="contained">
-                <Link component={RouterLink} to='/appointment'>
-                  
-                </Link>
-              </Button>
-              <Button variant="contained">
-                <Link component={RouterLink} to='/department'>
-                  DEPARTNMENT
-                </Link>
-              </Button>
-              <Button variant="contained">
-                <Link component={RouterLink} to='/details'>
-                  YOUR DETAILS
-                </Link>
-              </Button>
-              <Button variant="contained">
-                <Link component={RouterLink} to='/games'>
-                  
-                </Link>
-              </Button>
+                        </Box>
+                        <ul>
+                          {tier.description.map((line) => (
+                            <Typography
+                              component="li"
+                              variant="subtitle1"
+                              align="center"
+                              key={line}
+                            >
+                              {line}
+                            </Typography>
+                          ))}
+                        </ul>
+                      </CardContent>
+                      <CardActions>
+                        <Link component={RouterLink} to='/appointment'>
 
-
-            </Stack>
+                          <Button
+                            fullWidth
+                            variant="oulined"
+                            className='glass'
+                          >
+                            {tier.buttonText}
+                          </Button>
+                        </Link>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                ))}
+              </Grid>
+            </Container>
+            <Footer />
           </Container>
         </Box>
 
 
 
       </main>
-      {/* Footer */}
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </Box>
-      {/* End footer */}
+
     </ThemeProvider>
   );
 }

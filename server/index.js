@@ -1,4 +1,3 @@
-console.log('i am working');
 require('dotenv').config()
 console.log(process.env.DATABASE_CONNECTION_STRING);
 const session = require('express-session')

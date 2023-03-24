@@ -93,7 +93,7 @@ function Login({}) {
         })
       }
       // using the navigate function to redirect the user to the dashboard
-      // logic for checking user status
+    
       navigate('/dashboard');
 
       const data = await res.json()
